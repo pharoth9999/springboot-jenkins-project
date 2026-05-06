@@ -14,20 +14,20 @@ pipeline {
     }
 
     post {
-        success {
-            emailext(
-                to: 'your_email@example.com',
-                subject: "SUCCESS - springboot-jenkins-project - Thy Pharoth",
-                body: "Build SUCCESS ✔\nURL: ${env.BUILD_URL}"
-            )
-        }
-
-        failure {
-            emailext(
-                to: 'your_email@example.com',
-                subject: "FAILED - springboot-jenkins-project - Thy Pharoth",
-                body: "Build FAILED ❌\nCheck: ${env.BUILD_URL}"
-            )
-        }
+    success {
+        emailext(
+            to: "your_email@example.com",
+            subject: "SUCCESS - Thy Pharoth",
+            body: "Build SUCCESS: ${env.BUILD_URL}"
+        )
     }
+
+    failure {
+        emailext(
+            to: "your_email@example.com",
+            subject: "FAILED - Thy Pharoth",
+            body: "Build FAILED: ${env.BUILD_URL}"
+        )
+    }
+}
 }
