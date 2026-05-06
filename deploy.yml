@@ -1,16 +1,20 @@
 - hosts: server
-  become: yes
-
   tasks:
-    - name: Create my folder
+
+    - name: Create nginx folder
       file:
         path: /usr/share/nginx/html/Midterm-2026/thy-pharoth
         state: directory
 
     - name: Copy index.html
       copy:
-        src: index.html
+        src: files/index.html
         dest: /usr/share/nginx/html/Midterm-2026/thy-pharoth/index.html
+
+    - name: Create app folder
+      file:
+        path: /opt/thy-pharoth
+        state: directory
 
     - name: Copy jar file
       copy:
