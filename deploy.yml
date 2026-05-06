@@ -1,14 +1,18 @@
 - hosts: server
-  tasks:
+  become: yes
 
-    - name: Create ONLY my folder (safe)
+  tasks:
+    - name: Create my folder
       file:
         path: /usr/share/nginx/html/Midterm-2026/thy-pharoth
         state: directory
-        mode: '0755'
 
-    - name: Copy jar ONLY to my folder
+    - name: Copy index.html
+      copy:
+        src: index.html
+        dest: /usr/share/nginx/html/Midterm-2026/thy-pharoth/index.html
+
+    - name: Copy jar file
       copy:
         src: target/demo-0.0.1-SNAPSHOT.jar
-        dest: /usr/share/nginx/html/Midterm-2026/thy-pharoth/app.jar
-        mode: '0644'
+        dest: /opt/thy-pharoth/app.jar
