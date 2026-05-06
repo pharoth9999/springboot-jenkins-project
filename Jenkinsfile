@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         ANSIBLE_HOST_KEY_CHECKING = 'False'
+        ANSIBLE_SSH_ARGS = '-o ControlMaster=no'
     }
 
     tools {
@@ -51,6 +52,8 @@ BUILD FAILED
 
 Check Jenkins:
 ${env.BUILD_URL}
+
+Error logs included
 
 Build Number: ${env.BUILD_NUMBER}
 """
