@@ -3,13 +3,13 @@
 
     - name: Create nginx folder
       file:
-        path: /usr/share/nginx/html/Midterm-2026/thy-pharoth
+        path: /var/www/html/Midterm-2026/thy-pharoth
         state: directory
 
     - name: Copy index.html
       copy:
         src: files/index.html
-        dest: /usr/share/nginx/html/Midterm-2026/thy-pharoth/index.html
+        dest: /var/www/html/Midterm-2026/thy-pharoth/index.html
 
     - name: Create app folder
       file:
