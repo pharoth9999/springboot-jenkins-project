@@ -16,7 +16,7 @@ pipeline {
     post {
     success {
         emailext(
-            to: "your_email@example.com",
+            to: "phathyroth@gmail.com",
             subject: "SUCCESS - Thy Pharoth",
             body: "Build SUCCESS: ${env.BUILD_URL}"
         )
@@ -24,7 +24,7 @@ pipeline {
 
     failure {
         emailext(
-            to: "your_email@example.com",
+            to: "phathyroth@gmail.com",
             subject: "FAILED - Thy Pharoth",
             body: "Build FAILED: ${env.BUILD_URL}"
         )
